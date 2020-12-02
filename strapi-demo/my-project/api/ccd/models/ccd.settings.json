@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ccds",
+  "info": {
+    "name": "ccd",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

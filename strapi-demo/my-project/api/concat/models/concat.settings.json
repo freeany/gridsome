@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "concats",
+  "info": {
+    "name": "concat"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "unique": false,
+      "required": true
+    },
+    "phone": {
+      "type": "integer"
+    },
+    "message": {
+      "type": "text"
+    }
+  }
+}

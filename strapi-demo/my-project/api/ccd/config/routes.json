@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/ccds",
+      "handler": "ccd.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/ccds/count",
+      "handler": "ccd.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/ccds/:id",
+      "handler": "ccd.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/ccds",
+      "handler": "ccd.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/ccds/:id",
+      "handler": "ccd.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/ccds/:id",
+      "handler": "ccd.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -64,7 +64,10 @@
   `199.232.4.133 raw.githubusercontent.com`
 
 - 约定 pages 下的文件自动生成路由
+
 - `npm run build`  将项目打包成静态文件，就可以部署在任何服务器下面了。全局安装serve在本地测试， serve dist 启动一个本地服务器。
+
+- gridsome打包的页面都是路由地址。不管是在pages下面自动约定的页面路由，还是在grdisome项目中在gridsome.serve.js中手动配置的路由，或者是在gridsome.config.js中手动配置的templates 路由页面模板都会被打包。 反之如果不成路由，则不会被打包。
 
 #### gridsome.config.js
 
