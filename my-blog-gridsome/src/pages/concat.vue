@@ -34,6 +34,7 @@
               <div class="form-group floating-label-form-group controls">
                 <label>Name</label>
                 <input
+                  v-model="form.name"
                   type="text"
                   class="form-control"
                   placeholder="Name"
@@ -48,6 +49,7 @@
               <div class="form-group floating-label-form-group controls">
                 <label>Email Address</label>
                 <input
+                  v-model="form.email"
                   type="email"
                   class="form-control"
                   placeholder="Email Address"
@@ -64,6 +66,7 @@
               >
                 <label>Phone Number</label>
                 <input
+                  v-model="form.phone"
                   type="tel"
                   class="form-control"
                   placeholder="Phone Number"
@@ -78,6 +81,7 @@
               <div class="form-group floating-label-form-group controls">
                 <label>Message</label>
                 <textarea
+                  v-model="form.message"
                   rows="5"
                   class="form-control"
                   placeholder="Message"
@@ -85,6 +89,9 @@
                   required
                   data-validation-required-message="Please enter a message."
                 ></textarea>
+                <div v-for="(error, key) in errors" :key="key">
+                  {{ key }}: &nbsp;<span class="error">{{ error }} </span>
+                </div>
                 <p class="help-block text-danger"></p>
               </div>
             </div>
@@ -94,6 +101,7 @@
               type="submit"
               class="btn btn-primary"
               id="sendMessageButton"
+              @click.prevent="onSubmit"
             >
               Send
             </button>
@@ -105,10 +113,48 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-  name: 'Concat'
+  name: 'ConcatPage',
+  data () {
+    return {
+      errors: {},
+      form: {
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      }
+    }
+  },
+  methods: {
+    async onSubmit () {
+      const that = this
+      try {
+        await axios({
+          method: 'post',
+          url: `${that.GRIDSOME_API_URL}/concats`,
+          data: this.form
+        })
+        this.errors = {}
+        this.form = {
+          name: '',
+          email: '',
+          phone: '',
+          message: ''
+        }
+        window.alert('提交成功')
+      } catch (error) {
+        this.errors = error.response.data.data.errors
+        window.alert('错误了')
+      }
+    }
+  }
 }
 </script>
 
 <style>
+.error {
+  color: brown;
+}
 </style>

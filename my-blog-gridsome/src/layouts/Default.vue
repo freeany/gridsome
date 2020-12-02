@@ -3,7 +3,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+        <g-link class="navbar-brand" to="/">心灵捕手</g-link>
         <button
           class="navbar-toggler navbar-toggler-right"
           type="button"
@@ -19,16 +19,16 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
+              <g-link class="nav-link" to="/">Home</g-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
+              <g-link class="nav-link" to="/about">About</g-link>
             </li>
+            <!-- <li class="nav-item">
+              <g-link class="nav-link" to="/con">Sample Post</g-link>
+            </li> -->
             <li class="nav-item">
-              <a class="nav-link" href="post.html">Sample Post</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <g-link class="nav-link" to="/concat">Contact</g-link>
             </li>
           </ul>
         </div>
